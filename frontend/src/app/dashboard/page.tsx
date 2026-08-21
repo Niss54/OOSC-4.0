@@ -15,6 +15,8 @@ import {
   FileCheck,
   Timer,
   Inbox,
+  X,
+  Printer
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -59,6 +61,50 @@ const staggerItem = {
 
 export default function DashboardPage() {
   const [applications, setApplications] = useState<StoredApplication[]>([]);
+  const [grievanceModalOpen, setGrievanceModalOpen] = useState(false);
+  const [rtiDraft, setRtiDraft] = useState("");
+  const [isDrafting, setIsDrafting] = useState(false);
+  const [currentGrievanceApp, setCurrentGrievanceApp] = useState<StoredApplication | null>(null);
+
+  const handleFileGrievance = async (app: StoredApplication) => {
+    setCurrentGrievanceApp(app);
+    setGrievanceModalOpen(true);
+    setRtiDraft("");
+    setIsDrafting(true);
+
+    try {
+      const res = await fetch("/api/grievance", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          applicantName: "Applicant",
+          schemeName: app.schemeName,
+          schemeMinistry: "Concerned Department",
+          applicationDate: app.appliedDate || new Date().toLocaleDateString(),
+          rejectionReason: "Not provided",
+        }),
+      });
+      const data = await res.json();
+      if (data.draft) setRtiDraft(data.draft);
+      else setRtiDraft("Failed to generate draft. Please try again.");
+    } catch (err) {
+      setRtiDraft("Error connecting to server.");
+    } finally {
+      setIsDrafting(false);
+    }
+  };
+
+  const handlePrint = () => {
+    const printContent = document.getElementById("rti-print-area");
+    const windowPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+    if (windowPrint && printContent) {
+      windowPrint.document.write(`<html><head><title>RTI Application</title><style>body{font-family:monospace;padding:20px;white-space:pre-wrap;}</style></head><body>${printContent.innerText}</body></html>`);
+      windowPrint.document.close();
+      windowPrint.focus();
+      windowPrint.print();
+      windowPrint.close();
+    }
+  };
 
   // Load from store + listen for real-time updates
   useEffect(() => {
@@ -228,15 +274,25 @@ export default function DashboardPage() {
                           )}
                         </div>
                       </div>
-                      <div
-                        className={cn(
-                          "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium",
-                          currentStatus.bg,
-                          currentStatus.color
+                      <div className="flex flex-col sm:flex-row items-end sm:items-center gap-3">
+                        {app.status === "rejected" && (
+                          <button
+                            onClick={() => handleFileGrievance(app)}
+                            className="text-xs font-semibold px-3 py-1.5 bg-red-500/10 text-red-400 hover:bg-red-500/20 rounded-lg transition-colors border border-red-500/20 shadow-sm"
+                          >
+                            File Grievance
+                          </button>
                         )}
-                      >
-                        <StatusIcon className="w-4 h-4" />
-                        {currentStatus.label}
+                        <div
+                          className={cn(
+                            "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium",
+                            currentStatus.bg,
+                            currentStatus.color
+                          )}
+                        >
+                          <StatusIcon className="w-4 h-4" />
+                          {currentStatus.label}
+                        </div>
                       </div>
                     </div>
 
@@ -419,6 +475,30 @@ export default function DashboardPage() {
                 </div>
               </div>
             </GlassCard>
+
+            <GlassCard className="p-5">
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/30 mb-4">
+                State Helplines
+              </div>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground/80">CM Helpline</span>
+                  <span className="font-mono font-medium text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">1076</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground/80">Women Helpline</span>
+                  <span className="font-mono font-medium text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded">1090</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground/80">Kisan Call Center</span>
+                  <span className="font-mono font-medium text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded">1551</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground/80">Anti-Corruption</span>
+                  <span className="font-mono font-medium text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">1031</span>
+                </div>
+              </div>
+            </GlassCard>
           </div>
 
           </div>
@@ -455,6 +535,57 @@ export default function DashboardPage() {
           )}
         </main>
       </PageShell>
+
+      {/* Grievance Modal */}
+      {grievanceModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            className="w-full max-w-2xl bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+          >
+            <div className="p-4 border-b border-white/10 flex items-center justify-between bg-zinc-900/50">
+              <h2 className="text-lg font-semibold font-[family-name:var(--font-display)] flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-red-400" />
+                RTI / Grievance Draft
+              </h2>
+              <button onClick={() => setGrievanceModalOpen(false)} className="p-2 hover:bg-white/5 rounded-lg transition-colors">
+                <X className="w-5 h-5 text-muted-foreground" />
+              </button>
+            </div>
+            
+            <div className="p-6 overflow-y-auto flex-1 font-mono text-sm leading-relaxed" id="rti-print-area">
+              {isDrafting ? (
+                <div className="flex flex-col items-center justify-center py-12 text-muted-foreground animate-pulse">
+                  <FileText className="w-8 h-8 mb-3 opacity-50" />
+                  <p>Drafting formal RTI application via AI...</p>
+                </div>
+              ) : (
+                <div className="whitespace-pre-wrap text-zinc-300">
+                  {rtiDraft}
+                </div>
+              )}
+            </div>
+
+            <div className="p-4 border-t border-white/10 bg-zinc-900/50 flex justify-end gap-3">
+              <button 
+                onClick={() => setGrievanceModalOpen(false)}
+                className="px-4 py-2 rounded-xl text-sm font-medium hover:bg-white/5 transition-colors"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handlePrint}
+                disabled={isDrafting || !rtiDraft}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 text-white text-sm font-medium hover:bg-purple-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <Printer className="w-4 h-4" />
+                Download as PDF
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </>
   );
 }
