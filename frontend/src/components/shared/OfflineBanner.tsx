@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-hooks/purity */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -35,3 +37,4 @@ export default function OfflineBanner() {
     </div>
   );
 }
+

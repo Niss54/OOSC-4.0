@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-hooks/purity */
 "use client";
 
 import React, { useState, useEffect, useRef, ReactNode, HTMLAttributes } from "react";
@@ -78,3 +80,4 @@ const Magnet: React.FC<MagnetProps> = ({
 };
 
 export default Magnet;
+

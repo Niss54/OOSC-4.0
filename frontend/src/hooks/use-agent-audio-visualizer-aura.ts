@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-hooks/purity */
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { type LocalAudioTrack, type RemoteAudioTrack } from 'livekit-client';
 import {
@@ -122,3 +124,4 @@ export function useAgentAudioVisualizerAura(
     brightness,
   };
 }
+

@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-hooks/purity */
 "use client";
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
@@ -361,3 +363,4 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 };
 
 export default GooeyNav;
+

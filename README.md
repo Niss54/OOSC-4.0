@@ -1,4 +1,4 @@
-<!-- Generated README — see frontend/README.md for frontend-specific docs -->
+sh<!-- Generated README — see frontend/README.md for frontend-specific docs -->
 
 # Adhikaar (अधिकार)
 
