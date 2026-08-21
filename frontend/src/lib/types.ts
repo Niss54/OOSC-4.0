@@ -111,7 +111,7 @@ export interface UploadedDocument {
   verified: boolean;
 }
 
-export type SupportedLanguage = "en" | "hi" | "ta" | "te" | "bn" | "mr" | "gu" | "kn" | "ml" | "pa" | "or";
+export type SupportedLanguage = "en" | "hi" | "ta" | "te" | "bn" | "mr" | "gu" | "kn" | "ml" | "pa" | "or" | "mai" | "brx" | "doi" | "sat" | "mni" | "kok" | "sd" | "sa" | "ur" | "ks" | "ne";
 
 export const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
   en: "English",
@@ -125,6 +125,17 @@ export const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
   ml: "മലയാളം",
   pa: "ਪੰਜਾਬੀ",
   or: "ଓଡ଼ିଆ",
+  mai: "मैथिली",
+  brx: "बड़ो",
+  doi: "डोगरी",
+  sat: "संथाली",
+  mni: "মৈতৈ",
+  kok: "कोंकणी",
+  sd: "सिंधी",
+  sa: "संस्कृत",
+  ur: "اردو",
+  ks: "کأشُر",
+  ne: "नेपाली",
 };
 
 /** Sarvam AI language codes for STT/TTS */
@@ -140,6 +151,17 @@ export const SARVAM_LANG_CODES: Record<SupportedLanguage, string> = {
   ml: "ml-IN",
   pa: "pa-IN",
   or: "or-IN",
+  mai: "mai-IN",
+  brx: "brx-IN",
+  doi: "doi-IN",
+  sat: "sat-IN",
+  mni: "mni-IN",
+  kok: "kok-IN",
+  sd: "sd-IN",
+  sa: "sa-IN",
+  ur: "ur-IN",
+  ks: "ks-IN",
+  ne: "ne-IN",
 };
 
 export const INDIAN_STATES = [

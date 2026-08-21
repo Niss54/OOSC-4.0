@@ -19,7 +19,7 @@ export default function LanguageSelector({
 }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const languages: SupportedLanguage[] = ["en", "hi", "ta", "te", "bn", "mr", "gu", "kn", "ml", "pa", "or"];
+  const languages: SupportedLanguage[] = ["en", "hi", "ta", "te", "bn", "mr", "gu", "kn", "ml", "pa", "or", "mai", "brx", "doi", "sat", "mni", "kok", "sd", "sa", "ur", "ks", "ne"];
 
   // Close dropdown when clicking outside
   useEffect(() => {

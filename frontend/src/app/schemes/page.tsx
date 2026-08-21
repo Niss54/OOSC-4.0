@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import { cacheSchemes } from "@/lib/offline";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search,
@@ -235,6 +236,15 @@ export default function SchemesPage() {
   const [selectedScheme, setSelectedScheme] = useState<Scheme | null>(null);
 
   const schemes = schemesData as Scheme[];
+
+  // Cache schemes to IndexedDB for offline access
+  useEffect(() => {
+    if (schemes.length > 0) {
+      cacheSchemes(schemes as unknown[]).catch(() => {
+        // IndexedDB may not be available in all environments — fail silently
+      });
+    }
+  }, [schemes]);
 
   const categories: (SchemeCategory | "all")[] = [
     "all",
