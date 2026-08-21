@@ -896,10 +896,10 @@ export default function Hero() {
               className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8"
             >
               {[
-                { value: 400, suffix: "+", label: "Government Schemes", color: "text-purple-400" },
-                { value: 7, suffix: ".5L Cr", label: "Annual Welfare Budget", color: "text-emerald-400" },
-                { value: 40, suffix: "%", label: "Benefits Go Unclaimed", color: "text-amber-400" },
-                { value: 3, suffix: " min", label: "Apply With Adhikaar", color: "text-blue-400" },
+                { value: 4640, suffix: "+", label: "Government Schemes", color: "text-purple-400" },
+                { value: 22, suffix: "+", label: "Indian Languages", color: "text-emerald-400" },
+                { value: 1400000000, suffix: "+", label: "Citizens Reachable", color: "text-amber-400" },
+                { value: 36, suffix: "", label: "States and UTs", color: "text-blue-400" },
               ].map((stat, i) => (
                 <div key={i} className="text-center px-4 py-5 rounded-xl bg-white/[0.02] border border-white/[0.03]">
                   <div className={cn("text-3xl sm:text-4xl font-bold font-[family-name:var(--font-display)] tabular-nums", stat.color)}>

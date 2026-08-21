@@ -17,6 +17,7 @@ import {
   Shield,
   X,
   Eye,
+  MessageCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -930,6 +931,16 @@ export default function ChatInterface() {
             </div>
           </div>
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                const text = encodeURIComponent("Talk to Adhikaar AI directly on WhatsApp! Try it now.");
+                window.open(`https://wa.me/?text=${text}`, "_blank");
+              }}
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/20 text-[#25D366] text-xs font-medium transition-all"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              WhatsApp
+            </button>
             <button
               onClick={() => setShowVoiceCall(true)}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-500/10 hover:bg-green-500/20 border border-green-500/20 text-green-400 text-xs font-medium transition-all"

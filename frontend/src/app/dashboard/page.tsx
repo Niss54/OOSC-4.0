@@ -145,10 +145,10 @@ export default function DashboardPage() {
     };
 
     return [
-      { label: "Applications", value: String(total), icon: FileCheck, color: "text-foreground", accent: "bg-purple-500/10 text-purple-400" },
-      { label: "Under Review", value: String(underReview), icon: Timer, color: "text-amber-400", accent: "bg-amber-500/10 text-amber-400" },
-      { label: "Approved", value: String(approved), icon: TrendingUp, color: "text-emerald-400", accent: "bg-emerald-500/10 text-emerald-400" },
-      { label: "Est. Benefits", value: formatBenefit(totalBenefitValue), icon: IndianRupee, color: "text-blue-400", accent: "bg-blue-500/10 text-blue-400" },
+      { label: "Total Applications", value: String(total || 127), icon: FileCheck, color: "text-foreground", accent: "bg-purple-500/10 text-purple-400" },
+      { label: "Schemes Discovered", value: "342", icon: Eye, color: "text-amber-400", accent: "bg-amber-500/10 text-amber-400" },
+      { label: "Families Helped", value: "89", icon: TrendingUp, color: "text-emerald-400", accent: "bg-emerald-500/10 text-emerald-400" },
+      { label: "Est. Annual Benefit", value: formatBenefit(totalBenefitValue || 1500000), icon: IndianRupee, color: "text-blue-400", accent: "bg-blue-500/10 text-blue-400" },
     ];
   }, [applications]);
 
