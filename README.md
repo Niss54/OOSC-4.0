@@ -3,6 +3,8 @@
 # Adhikaar (अधिकार)
 
 <p align="center">
+  <img src="https://img.shields.io/badge/OOSC_4.0-PS5_AI_for_Public_Good-6366F1?style=for-the-badge" alt="PS5">
+  <img src="https://img.shields.io/badge/Open_Source-MIT-10B981?style=for-the-badge" alt="Open Source">
   <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js">
   <img src="https://img.shields.io/badge/LiveKit-Cloud-blue?style=for-the-badge&logo=livekit" alt="LiveKit">
   <img src="https://img.shields.io/badge/Groq-LLM-7B61FF?style=for-the-badge&logo=hardware" alt="Groq">
@@ -34,6 +36,16 @@
 | 🌐 **Multi-Language** | Supports Hindi, English, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Odia |
 | 👨‍👩‍👧‍👦 **Family Mode** | Apply for schemes for your entire family |
 | 📊 **Application Tracker** | Dashboard to track all submitted applications |
+
+## Impact at Scale
+
+| Metric | Value |
+|--------|-------|
+| Government Schemes Covered | 4,640+ (myScheme.gov.in) |
+| Languages Supported | 11 Indian languages |
+| Target Population | 1.4 Billion citizens |
+| Form Automation | AI-powered (Playwright) |
+| Voice Support | Real-time (LiveKit + Sarvam AI) |
 
 ---
 
@@ -93,6 +105,18 @@
 - **LLM**: [Groq](https://console.groq.com/) (Llama 3.3 70B)
 - **Vision**: [Google Gemini](https://ai.google.dev/) (OCR)
 - **Schemes**: [myScheme.gov.in](https://myscheme.gov.in/) API
+
+---
+
+## Open Source Foundation
+Adhikaar is built entirely on open APIs and open-source tools:
+- **myScheme.gov.in** — India's official government scheme API (4640+ schemes)
+- **Groq** — Open-access LLM inference (Llama 3.3 70B)
+- **Sarvam AI** — Indian language STT/TTS
+- **LiveKit** — Open-source real-time voice infrastructure
+- **Next.js + Python** — Fully open-source stack
+> This project was built for OOSC 4.0 Hackathon under
+> **PS 5 — AI for Public Good (Accessible Public Services)**
 
 ---
 
@@ -247,3 +271,18 @@ MIT License — feel free to use this project for your own purposes.
 <p align="center">
   Made with ❤️ for India
 </p>
+
+---
+
+## OOSC 4.0 Hackathon
+Built for the OOSC 4.0 Hackathon organized by GDG IIIT Allahabad.
+**Problem Statement:** PS 5 — AI for Public Good
+**Category:** AI for Accessible Public Services
+OOSC 4.0 Hackathon — Adhikaar Submission Guide Nishant Maurya | Team Adhikaar
+Deadline: 23 Aug 2026, 4:00 PM IST | PS 5 — AI for Public Good Page 4 / 12
+
+### Why this matters
+- India has 4,640+ welfare schemes but low citizen awareness
+- Language barrier prevents millions from accessing benefits
+- Adhikaar bridges this gap with voice-first, multilingual AI
+OOSC 4.0 Hackathon — Adhikaar Submission Guide Nishant Maurya | Team syntrix
