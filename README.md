@@ -34,8 +34,12 @@
 | 📄 **OCR Document Parsing** | Extract information from Aadhaar, PAN, and other documents |
 | 🔊 **Real-Time Voice** | LiveKit-powered voice calls with human-like responses |
 | 🌐 **Multi-Language** | Supports Hindi, English, Tamil, Telugu, Bengali, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Odia |
+| 💬 **WhatsApp Bot** | Accessible via WhatsApp with text and audio message support |
+| 🗣️ **Bhashini Integration** | Official Govt STT API for accurate Indian language speech recognition via WhatsApp |
 | 👨‍👩‍👧‍👦 **Family Mode** | Apply for schemes for your entire family |
 | 📊 **Application Tracker** | Dashboard to track all submitted applications |
+| 📱 **PWA Support** | Installable as a Progressive Web App (PWA) on mobile and desktop for a native experience |
+| 📝 **RTI & Grievance Filing** | AI-assisted Right to Information (RTI) drafting and direct grievance filing |
 
 ## Impact at Scale
 
@@ -105,7 +109,7 @@
 - **LLM**: [Groq](https://console.groq.com/) (Llama 3.3 70B)
 - **Vision**: [Google Gemini](https://ai.google.dev/) (OCR)
 - **Schemes**: [myScheme.gov.in](https://myscheme.gov.in/) API
-
+- **Speech-to-Text**: [Bhashini API](https://bhashini.gov.in/) (WhatsApp Audio processing)
 ---
 
 ## Open Source Foundation
@@ -220,6 +224,8 @@ LiveKit Cloud handles agent hosting — no server management needed.
 | `LIVEKIT_API_KEY` | Yes | LiveKit API key |
 | `LIVEKIT_API_SECRET` | Yes | LiveKit API secret |
 | `MYSCHEME_API_KEY` | Optional | Government scheme API |
+| `BHASHINI_USER_ID` | Yes | Bhashini API User ID |
+| `BHASHINI_API_KEY` | Yes | Bhashini API Key |
 
 ### Agent (LiveKit Cloud Dashboard)
 

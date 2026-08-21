@@ -80,7 +80,8 @@ export async function POST(req: NextRequest) {
         
       // We will actually fetch schemes and return them in the same response
       try {
-        const schemesData = await searchSchemes("hi"); // Using existing searchSchemes
+        const searchLang = session.language === "en" ? "en" : "hi";
+        const schemesData = await searchSchemes({}, { lang: searchLang }); // Using existing searchSchemes
         const topSchemes = schemesData.schemes.slice(0, 3);
         
         let schemesList = "";
