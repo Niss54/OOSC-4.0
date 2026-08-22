@@ -1,6 +1,7 @@
 
 
-                                                   # Adhikaar (अधिकार)
+ <h2> # Adhikaar (अधिकार)
+ </h2>
 
 <p align="center">
   <img src="https://img.shields.io/badge/OOSC_4.0-PS5_AI_for_Public_Good-6366F1?style=for-the-badge" alt="PS5">
