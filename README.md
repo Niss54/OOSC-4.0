@@ -52,6 +52,10 @@
 
 ## 🏗️ Architecture
 
+<p align="center">
+  <img src="./architecture.svg" alt="Adhikaar Architecture Diagram" width="100%">
+</p>
+
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                              USERS                                   │
