@@ -1,40 +1,25 @@
-<div align="center">
+ <div align="center"> # Adhikaar (अधिकार)
+ </div>
 
-<table>
-<tr>
-<td align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/OOSC_4.0-PS5_AI_for_Public_Good-6366F1?style=for-the-badge" alt="PS5">
+  <img src="https://img.shields.io/badge/Open_Source-MIT-10B981?style=for-the-badge" alt="Open Source">
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js">
+  <img src="https://img.shields.io/badge/LiveKit-Cloud-blue?style=for-the-badge&logo=livekit" alt="LiveKit">
+  <img src="https://img.shields.io/badge/Groq-LLM-7B61FF?style=for-the-badge&logo=hardware" alt="Groq">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
 
-<h1>Adhikaar (अधिकार)</h1>
+<p align="center">
+  <strong>India's First AI Welfare Copilot</strong><br>
+  Voice-first AI assistant that helps Indian citizens discover and apply for government welfare schemes in their native language.
+</p>
 
-![OOSC 4.0](https://img.shields.io/badge/OOSC-4.0-555555)
-![PS5 AI FOR PUBLIC GOOD](https://img.shields.io/badge/PS5_AI_FOR_PUBLIC_GOOD-0070f3)
-![OPEN SOURCE](https://img.shields.io/badge/OPEN_SOURCE-555555)
-![MIT](https://img.shields.io/badge/MIT-orange)
-![Next.js](https://img.shields.io/badge/Next.js-black?logo=nextdotjs)
-![16](https://img.shields.io/badge/-16-blue)
-![LIVEKIT](https://img.shields.io/badge/LIVEKIT-222222)
-![CLOUD](https://img.shields.io/badge/CLOUD-0070f3)
-![GROQ](https://img.shields.io/badge/GROQ-555555)
-![LLM](https://img.shields.io/badge/LLM-8B5CF6)
-![LICENSE](https://img.shields.io/badge/LICENSE-555555)
-![MIT](https://img.shields.io/badge/MIT-22c55e)
-
-<br/>
-
-**India's First AI Welfare Copilot**
-
-Voice-first AI assistant that helps Indian citizens discover and apply for government welfare schemes in their native language.
-
-<br/>
-
-[🔗 Repository](#) · [🚀 Deployment](#)
-
-</td>
-</tr>
-</table>
-
-</div>
-
+<p align="center">
+  <a href="https://github.com/your-username/adhikaar">Repository</a>
+  ·
+  <a href="#-deployment">Deployment</a>
+</p>
 ---
 
 ## ✨ Features
